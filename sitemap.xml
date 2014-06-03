@@ -1,6 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
+        <loc>http://rieya-uc.github.io/blog/2014/06/03/roll-the-dice/</loc>
+        <lastmod>2014-06-03T17:38:58+01:00</lastmod>
+    </url>
+    <url>
         <loc>http://rieya-uc.github.io/blog/archives/</loc>
         <lastmod>2014-06-03T17:38:58+01:00</lastmod>
     </url>

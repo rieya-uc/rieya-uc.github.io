@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://rieya-uc.github.io/atom.xml" rel="self"/>
   <link href="http://rieya-uc.github.io/"/>
-  <updated>2014-06-03T17:39:27+01:00</updated>
+  <updated>2014-06-03T17:41:19+01:00</updated>
   <id>http://rieya-uc.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -12,5 +12,52 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Roll the Dice]]></title>
+    <link href="http://rieya-uc.github.io/blog/2014/06/03/roll-the-dice/"/>
+    <updated>2014-06-03T14:22:18+01:00</updated>
+    <id>http://rieya-uc.github.io/blog/2014/06/03/roll-the-dice</id>
+    <content type="html"><![CDATA[<p>Things to do:</p>
+
+<ul>
+<li>Learn Javascript</li>
+<li>Try out <a href="http://phaser.io/">Phaser</a></li>
+<li>Get comfortable with putting stuff online</li>
+</ul>
+
+
+<p>To that end, here&rsquo;s something short I wrote to try out Phaser. Click the dice to make them roll.</p>
+
+<!--more-->
+
+
+
+
+<script type="text/javascript">
+    var path = '../../../../../blog_demos/';
+</script>
+
+
+
+
+<div id="demo" class="centre">
+
+    <script type="text/javascript" src= "../../../../../blog_demos/libs/phaser.min.js"></script>
+    <script type="text/javascript" src= "../../../../../blog_demos/rolling_dice/Dice.js"></script>
+    <script type="text/javascript" src= "../../../../../blog_demos/rolling_dice/rolling_dice.js"></script>
+</div>
+
+
+<pre><br></pre>
+
+
+<p>To get the roll effect I used a blur filter in combination with spritesheet animation and random rotation. The dice extend Phaser.Sprite so that they can manage their own values. With all the <a href="http://examples.phaser.io/">examples</a> available on the Phaser website, it was fairly easy to work out what was needed (working out the intricacies of Javascript on the other hand&hellip;).</p>
+
+<p>All the code is available on <a href="https://github.com/rieya-uc/blog_demos">github</a>, and in the rolling_dice folder specifically.</p>
+
+<p>Where to now? A game of Yahtzee perhaps?</p>
+]]></content>
+  </entry>
   
 </feed>
