@@ -3,7 +3,11 @@ layout: post
 title: "Roll The Dice"
 date: 2014-06-03 14:22:18 +0100
 comments: true
-categories: 
+categories:
+    - Javascript
+    - Phaser
+    - code
+    - demo
 ---
 
 Things to do:
