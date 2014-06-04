@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[One Broken Pixel]]></title>
-  <link href="http://rieya-uc.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Javascript | One Broken Pixel]]></title>
+  <link href="http://rieya-uc.github.io/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://rieya-uc.github.io/"/>
   <updated>2014-06-04T21:00:13+01:00</updated>
   <id>http://rieya-uc.github.io/</id>
