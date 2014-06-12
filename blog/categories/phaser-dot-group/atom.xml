@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Phaser.Group | One Broken Pixel]]></title>
   <link href="http://rieya-uc.github.io/blog/categories/phaser-dot-group/atom.xml" rel="self"/>
   <link href="http://rieya-uc.github.io/"/>
-  <updated>2014-06-12T16:16:46+01:00</updated>
+  <updated>2014-06-12T16:22:56+01:00</updated>
   <id>http://rieya-uc.github.io/</id>
   <author>
     <name><![CDATA[Rieya]]></name>
@@ -47,7 +47,7 @@
 
 <p>Everything inside a Group is moved relative to the Group&rsquo;s position. Don&rsquo;t do what I did and move the Group after the body&rsquo;s been dragged as an alternative to aligning the sprites individually, because you&rsquo;ll find the body has moved twice as far and your rectangle will be rectangular in name only. I found it simpler to keep all Groups at position (0,0), and position the sprites relative to that. The downside to doing it this way is that moving the Group via <code>(group.x, group.y) = some position</code> screws up the drag.</p>
 
-<p>If think that if I were to redo this, I would forego drag altogether and use mousedown events instead, so that I could move the Group as a whole, and not the individual sprites.</p>
+<p>I think that if I were to redo this, I would forego drag altogether and use mousedown events instead, so that I could move the Group as a whole, and not the individual sprites.</p>
 
 <p>Code? All available on <a href="https://github.com/rieya-uc/blog_demos">github</a>, and in the drag_square folder specifically.</p>
 ]]></content>
