@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Code | One Broken Pixel]]></title>
   <link href="http://rieya-uc.github.io/blog/categories/code/atom.xml" rel="self"/>
   <link href="http://rieya-uc.github.io/"/>
-  <updated>2014-06-04T21:00:13+01:00</updated>
+  <updated>2014-06-12T16:16:46+01:00</updated>
   <id>http://rieya-uc.github.io/</id>
   <author>
     <name><![CDATA[Rieya]]></name>
@@ -12,6 +12,46 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Drag the Square]]></title>
+    <link href="http://rieya-uc.github.io/blog/2014/06/11/drag-the-square/"/>
+    <updated>2014-06-11T16:01:37+01:00</updated>
+    <id>http://rieya-uc.github.io/blog/2014/06/11/drag-the-square</id>
+    <content type="html"><![CDATA[<p>This one took somewhat longer than I expected. I wanted to create a collection of sprites that could be dragged around the screen as one.</p>
+
+<p>Click the button to make a random rectangle appear somewhere on screen. Drag it around, then add a few more.</p>
+
+<!--more-->
+
+
+<script type="text/javascript">
+    var path = '../../../../../blog_demos/';
+</script>
+
+
+
+
+<div id="demo" class="centre">
+
+    <script type="text/javascript" src= "../../../../../blog_demos/libs/phaser.min.js"></script>
+    <script type="text/javascript" src= "../../../../../blog_demos/drag_square/Square.js"></script>
+    <script type="text/javascript" src= "../../../../../blog_demos/drag_square/drag_square.js"></script>
+</div>
+
+
+<pre><br></pre>
+
+
+<p>The rectangle (Square.js), is made up of several sprites; its body and four borders. They are contained in an extended Phaser.Group (see <a href="http://examples.phaser.io/_site/view_full.html?d=groups&amp;f=extending+a+group.js&amp;t=extending%20a%20group">example</a>). Groups have no dimensions, which means no click area, and no drag event. Therefore to get the rectangle to move as one, I enabled drag on the body and kept the borders aligned during <code>update()</code>.</p>
+
+<p>Everything inside a Group is moved relative to the Group&rsquo;s position. Don&rsquo;t do what I did and move the Group after the body&rsquo;s been dragged as an alternative to aligning the sprites individually, because you&rsquo;ll find the body has moved twice as far and your rectangle will be rectangular in name only. I found it simpler to keep all Groups at position (0,0), and position the sprites relative to that. The downside to doing it this way is that moving the Group via <code>(group.x, group.y) = some position</code> screws up the drag.</p>
+
+<p>If think that if I were to redo this, I would forego drag altogether and use mousedown events instead, so that I could move the Group as a whole, and not the individual sprites.</p>
+
+<p>Code? All available on <a href="https://github.com/rieya-uc/blog_demos">github</a>, and in the drag_square folder specifically.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Roll the Dice]]></title>

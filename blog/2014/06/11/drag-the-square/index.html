@@ -5,13 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Roll the Dice - One Broken Pixel</title>
+  <title>Drag the Square - One Broken Pixel</title>
   <meta name="author" content="Rieya">
 
   
-  <meta name="description" content="Things to do: Learn Javascript
-Try out Phaser
-Get comfortable with putting stuff online To that end, here&rsquo;s something short I wrote to try out &hellip;">
+  <meta name="description" content="This one took somewhat longer than I expected. I wanted to create a collection of sprites that could be dragged around the screen as one. Click the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +18,7 @@ Get comfortable with putting stuff online To that end, here&rsquo;s something sh
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://rieya-uc.github.io/blog/2014/06/03/roll-the-dice">
+  <link rel="canonical" href="http://rieya-uc.github.io/blog/2014/06/11/drag-the-square">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="One Broken Pixel" type="application/atom+xml">
@@ -76,7 +74,7 @@ Get comfortable with putting stuff online To that end, here&rsquo;s something sh
   
   <header>
     
-      <h1 class="entry-title">Roll the Dice</h1>
+      <h1 class="entry-title">Drag the Square</h1>
     
     
       <p class="meta">
@@ -92,27 +90,18 @@ Get comfortable with putting stuff online To that end, here&rsquo;s something sh
   
 
 
-<time datetime="2014-06-03T14:22:18+01:00" pubdate data-updated="true">Jun 3<span>rd</span>, 2014</time>
+<time datetime="2014-06-11T16:01:37+01:00" pubdate data-updated="true">Jun 11<span>th</span>, 2014</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Things to do:</p>
+<div class="entry-content"><p>This one took somewhat longer than I expected. I wanted to create a collection of sprites that could be dragged around the screen as one.</p>
 
-<ul>
-<li>Learn Javascript</li>
-<li>Try out <a href="http://phaser.io/">Phaser</a></li>
-<li>Get comfortable with putting stuff online</li>
-</ul>
-
-
-<p>To that end, here&rsquo;s something short I wrote to try out Phaser. Click the dice to make them roll.</p>
+<p>Click the button to make a random rectangle appear somewhere on screen. Drag it around, then add a few more.</p>
 
 <!--more-->
-
-
 
 
 <script type="text/javascript">
@@ -125,19 +114,21 @@ Get comfortable with putting stuff online To that end, here&rsquo;s something sh
 <div id="demo" class="centre">
 
     <script type="text/javascript" src= "../../../../../blog_demos/libs/phaser.min.js"></script>
-    <script type="text/javascript" src= "../../../../../blog_demos/rolling_dice/Dice.js"></script>
-    <script type="text/javascript" src= "../../../../../blog_demos/rolling_dice/rolling_dice.js"></script>
+    <script type="text/javascript" src= "../../../../../blog_demos/drag_square/Square.js"></script>
+    <script type="text/javascript" src= "../../../../../blog_demos/drag_square/drag_square.js"></script>
 </div>
 
 
 <pre><br></pre>
 
 
-<p>To get the roll effect I used a blur filter in combination with spritesheet animation and random rotation. The dice extend Phaser.Sprite so that they can manage their own values. With all the <a href="http://examples.phaser.io/">examples</a> available on the Phaser website, it was fairly easy to work out what was needed (working out the intricacies of Javascript on the other hand&hellip;).</p>
+<p>The rectangle (Square.js), is made up of several sprites; its body and four borders. They are contained in an extended Phaser.Group (see <a href="http://examples.phaser.io/_site/view_full.html?d=groups&amp;f=extending+a+group.js&amp;t=extending%20a%20group">example</a>). Groups have no dimensions, which means no click area, and no drag event. Therefore to get the rectangle to move as one, I enabled drag on the body and kept the borders aligned during <code>update()</code>.</p>
 
-<p>All the code is available on <a href="https://github.com/rieya-uc/blog_demos">github</a>, and in the rolling_dice folder specifically.</p>
+<p>Everything inside a Group is moved relative to the Group&rsquo;s position. Don&rsquo;t do what I did and move the Group after the body&rsquo;s been dragged as an alternative to aligning the sprites individually, because you&rsquo;ll find the body has moved twice as far and your rectangle will be rectangular in name only. I found it simpler to keep all Groups at position (0,0), and position the sprites relative to that. The downside to doing it this way is that moving the Group via <code>(group.x, group.y) = some position</code> screws up the drag.</p>
 
-<p>Where to now? A game of Yahtzee perhaps?</p>
+<p>If think that if I were to redo this, I would forego drag altogether and use mousedown events instead, so that I could move the Group as a whole, and not the individual sprites.</p>
+
+<p>Code? All available on <a href="https://github.com/rieya-uc/blog_demos">github</a>, and in the drag_square folder specifically.</p>
 </div>
 
 
@@ -160,12 +151,12 @@ Get comfortable with putting stuff online To that end, here&rsquo;s something sh
   
 
 
-<time datetime="2014-06-03T14:22:18+01:00" pubdate data-updated="true">Jun 3<span>rd</span>, 2014</time>
+<time datetime="2014-06-11T16:01:37+01:00" pubdate data-updated="true">Jun 11<span>th</span>, 2014</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/javascript/'>Javascript</a>, <a class='category' href='/blog/categories/phaser/'>Phaser</a>, <a class='category' href='/blog/categories/code/'>code</a>, <a class='category' href='/blog/categories/demo/'>demo</a>
+    <a class='category' href='/blog/categories/javascript/'>Javascript</a>, <a class='category' href='/blog/categories/phaser/'>Phaser</a>, <a class='category' href='/blog/categories/phaser-dot-group/'>Phaser.Group</a>, <a class='category' href='/blog/categories/phaser-dot-sprite/'>Phaser.Sprite</a>, <a class='category' href='/blog/categories/code/'>code</a>, <a class='category' href='/blog/categories/demo/'>demo</a>
   
 </span>
 
@@ -174,7 +165,7 @@ Get comfortable with putting stuff online To that end, here&rsquo;s something sh
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://rieya-uc.github.io/blog/2014/06/03/roll-the-dice/" data-via="" data-counturl="http://rieya-uc.github.io/blog/2014/06/03/roll-the-dice/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://rieya-uc.github.io/blog/2014/06/11/drag-the-square/" data-via="" data-counturl="http://rieya-uc.github.io/blog/2014/06/11/drag-the-square/" >Tweet</a>
   
   
   
@@ -183,8 +174,8 @@ Get comfortable with putting stuff online To that end, here&rsquo;s something sh
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2014/06/03/roll-the-dice/" title="Previous Post: Roll The Dice">&laquo; Roll The Dice</a>
       
-        <a class="basic-alignment right" href="/blog/2014/06/11/drag-the-square/" title="Next Post: Drag The Square">Drag The Square &raquo;</a>
       
     </p>
   </footer>
@@ -238,8 +229,8 @@ Get comfortable with putting stuff online To that end, here&rsquo;s something sh
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://rieya-uc.github.io/blog/2014/06/03/roll-the-dice/';
-        var disqus_url = 'http://rieya-uc.github.io/blog/2014/06/03/roll-the-dice/';
+        var disqus_identifier = 'http://rieya-uc.github.io/blog/2014/06/11/drag-the-square/';
+        var disqus_url = 'http://rieya-uc.github.io/blog/2014/06/11/drag-the-square/';
         var disqus_script = 'embed.js';
       
     (function () {
