@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Javascript | One Broken Pixel]]></title>
   <link href="http://rieya-uc.github.io/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://rieya-uc.github.io/"/>
-  <updated>2014-06-12T16:22:56+01:00</updated>
+  <updated>2014-06-25T20:52:58+01:00</updated>
   <id>http://rieya-uc.github.io/</id>
   <author>
     <name><![CDATA[Rieya]]></name>
@@ -12,6 +12,71 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Dodge and Shoot]]></title>
+    <link href="http://rieya-uc.github.io/blog/2014/06/25/dodge-and-shoot/"/>
+    <updated>2014-06-25T13:55:45+01:00</updated>
+    <id>http://rieya-uc.github.io/blog/2014/06/25/dodge-and-shoot</id>
+    <content type="html"><![CDATA[<p>For this demo I decided I wanted to do something a little longer. See how many monsters you can kill before you succumb to the inevitable.</p>
+
+<!--more-->
+
+
+<p>Hold the left mouse button to strafe.</p>
+
+<script type="text/javascript">
+    var path = '../../../../../blog_demos/';
+</script>
+
+
+
+
+<div id="demo" class="centre">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Handlee">
+    <script type="text/javascript" src="../../../../../blog_demos/libs/phaser.min.js"></script>
+    <script type="text/javascript" src="../../../../../blog_demos/arena_shooter/Boot.js"></script>
+    <script type="text/javascript" src="../../../../../blog_demos/arena_shooter/Preloader.js"></script>
+    <script type="text/javascript" src="../../../../../blog_demos/arena_shooter/MonsterSpawner.js"></script>
+    <script type="text/javascript" src="../../../../../blog_demos/arena_shooter/MainMenu.js"></script>
+    <script type="text/javascript" src="../../../../../blog_demos/arena_shooter/Game.js"></script>
+    
+    <script type="text/javascript">
+      
+      window.onload = function() {
+
+      
+      //    Create your Phaser game and inject it into the gameContainer div.
+      //    We did it in a window.onload event, but you can do it anywhere 
+      // (requireJS load, anonymous function, jQuery dom ready, - whatever floats your boat)
+      var game = new Phaser.Game(800, 600, Phaser.AUTO, "demo");
+      
+      //    Add the States your game has.
+
+      game.state.add('Boot', ArenaShooter.Boot);
+      game.state.add('Preloader', ArenaShooter.Preloader);
+      game.state.add('MainMenu', ArenaShooter.MainMenu);
+      game.state.add('Game', ArenaShooter.Game);
+
+      //    Now start the Boot state.
+      game.state.start('Boot');
+      
+      };
+      
+    </script>
+</div>
+
+
+<pre><br></pre>
+
+
+<p>It still needs a lot of polish, but it&rsquo;s a good starting point for developing something more complex. Later on, when I have the time, I&rsquo;ll have a go at fleshing it out.  Give the monsters more of a bite, they&rsquo;re too easy to dodge at the moment. Monster bullets, levels, bosses, collectibles, player upgrades, sound &hellip; what else?</p>
+
+<p>If you decide to take a peek at the <a href="https://github.com/rieya-uc/blog_demos">code</a>, you&rsquo;ll notice the sudden increase in .js files. I&rsquo;ve moved on to using Phaser&rsquo;s <a href="https://github.com/photonstorm/phaser/tree/master/resources/Project%20Templates">templates</a> as a way of organising my code. It sets everything up to load in stages, with space for a preloader bar and logo screen if needed. Useful for when my demos start getting bigger.</p>
+
+<p>As an aside, here&rsquo;s the fun little game I shamelessly ripped my idea from, <a href="http://www.kongregate.com/games/GameReclaim/death-vs-monstars">Death Vs Monstars</a>. And of course, here&rsquo;s a link to my <a href="https://github.com/rieya-uc/blog_demos">code</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Drag the Square]]></title>
