@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Phaser | One Broken Pixel]]></title>
   <link href="http://rieya-uc.github.io/blog/categories/phaser/atom.xml" rel="self"/>
   <link href="http://rieya-uc.github.io/"/>
-  <updated>2014-06-25T22:01:08+01:00</updated>
+  <updated>2014-07-17T23:27:15+01:00</updated>
   <id>http://rieya-uc.github.io/</id>
   <author>
     <name><![CDATA[Rieya]]></name>
@@ -12,6 +12,74 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Tilemap Towns]]></title>
+    <link href="http://rieya-uc.github.io/blog/2014/07/15/tilemap-towns/"/>
+    <updated>2014-07-15T17:17:28+01:00</updated>
+    <id>http://rieya-uc.github.io/blog/2014/07/15/tilemap-towns</id>
+    <content type="html"><![CDATA[<p>Come in, have a look around. I&rsquo;ve created an rpg-style town for you to explore.</p>
+
+<!--more-->
+
+
+<p>Use the cursor keys to move, or use the on-screen arrows.</p>
+
+<script type="text/javascript">
+    var path = '../../../../../blog_demos/';
+</script>
+
+
+
+
+<div id="demo" class="centre">
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/phaser/2.0.6/phaser.min.js"></script>
+    <script type="text/javascript" src="../../../../../blog_demos/explore_the_farm/Boot.js"></script>
+    <script type="text/javascript" src="../../../../../blog_demos/explore_the_farm/Preloader.js"></script>
+    <script type="text/javascript" src="../../../../../blog_demos/explore_the_farm/MainMenu.js"></script>
+    <script type="text/javascript" src="../../../../../blog_demos/explore_the_farm/Game.js"></script>
+    
+    <script type="text/javascript">
+      
+      window.onload = function() {
+
+      
+      //    Create your Phaser game and inject it into the gameContainer div.
+      //    We did it in a window.onload event, but you can do it anywhere 
+      // (requireJS load, anonymous function, jQuery dom ready, - whatever floats your boat)
+      var game = new Phaser.Game(800, 600, Phaser.AUTO, "demo");
+      
+      //    Add the States your game has.
+
+      game.state.add('Boot', TilemapTowns.Boot);
+      game.state.add('Preloader', TilemapTowns.Preloader);
+      game.state.add('MainMenu', TilemapTowns.MainMenu);
+      game.state.add('Game', TilemapTowns.Game);
+
+      //    Now start the Boot state.
+      game.state.start('Boot');
+      
+      };
+      
+    </script>
+</div>
+
+
+<pre><br></pre>
+
+
+<p>If you&rsquo;re using Firefox and notice it to be laggy, try it in a different browser (Chrome and IE work fine for me). The framerate drop doesn&rsquo;t seem to show up when I run the game locally, but only once I&rsquo;ve pushed it to the blog. I&rsquo;m not quite sure how to go about debugging something like that.</p>
+
+<p>The version that&rsquo;s up now is using Phaser&rsquo;s Arcade physics to check for collisions. I also wrote a version using P2 physics, have a root around the <a href="https://github.com/rieya-uc/blog_demos/tree/master/explore_the_farm">repo</a> if you&rsquo;d like to compare the two. There&rsquo;s some changes coming to the P2 api, so depending on how far into the future you&rsquo;re reading this, the P2 physics town may or may not work.</p>
+
+<p>There&rsquo;s also a third physics system, Ninja, which I haven&rsquo;t tried out yet. Don&rsquo;t know which one to use? Read the explanation <a href="http://www.html5gamedevs.com/topic/4518-explaining-phaser-2s-multiple-physics-systems/">here</a>.</p>
+
+<p>Fancy making your own town? You&rsquo;ll need <a href="http://www.mapeditor.org/">Tiled</a>, and the wonderful lpc tilesets from <a href="http://opengameart.org/lpc-art-entries">opengame.art</a>.</p>
+
+<p>Check out my <a href="https://github.com/rieya-uc/blog_demos">code</a>, it seems to be growing.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Dodge and Shoot]]></title>

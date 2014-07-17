@@ -1,0 +1,300 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Tilemap Towns - One Broken Pixel</title>
+  <meta name="author" content="Rieya">
+
+  
+  <meta name="description" content="Come in, have a look around. I&rsquo;ve created an rpg-style town for you to explore. Use the cursor keys to move, or use the on-screen arrows. var &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://rieya-uc.github.io/blog/2014/07/15/tilemap-towns">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="One Broken Pixel" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+
+<style>
+    .centre canvas {
+        display : block;
+        margin : auto;
+    }
+</style>
+        
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">One Broken Pixel</a></h1>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:rieya-uc.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Tilemap Towns</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-15T17:17:28+01:00" pubdate data-updated="true">Jul 15<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Come in, have a look around. I&rsquo;ve created an rpg-style town for you to explore.</p>
+
+<!--more-->
+
+
+<p>Use the cursor keys to move, or use the on-screen arrows.</p>
+
+<script type="text/javascript">
+    var path = '../../../../../blog_demos/';
+</script>
+
+
+
+
+<div id="demo" class="centre">
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/phaser/2.0.6/phaser.min.js"></script>
+    <script type="text/javascript" src="../../../../../blog_demos/explore_the_farm/Boot.js"></script>
+    <script type="text/javascript" src="../../../../../blog_demos/explore_the_farm/Preloader.js"></script>
+    <script type="text/javascript" src="../../../../../blog_demos/explore_the_farm/MainMenu.js"></script>
+    <script type="text/javascript" src="../../../../../blog_demos/explore_the_farm/Game.js"></script>
+    
+    <script type="text/javascript">
+      
+      window.onload = function() {
+
+      
+      //    Create your Phaser game and inject it into the gameContainer div.
+      //    We did it in a window.onload event, but you can do it anywhere 
+      // (requireJS load, anonymous function, jQuery dom ready, - whatever floats your boat)
+      var game = new Phaser.Game(800, 600, Phaser.AUTO, "demo");
+      
+      //    Add the States your game has.
+
+      game.state.add('Boot', TilemapTowns.Boot);
+      game.state.add('Preloader', TilemapTowns.Preloader);
+      game.state.add('MainMenu', TilemapTowns.MainMenu);
+      game.state.add('Game', TilemapTowns.Game);
+
+      //    Now start the Boot state.
+      game.state.start('Boot');
+      
+      };
+      
+    </script>
+</div>
+
+
+<pre><br></pre>
+
+
+<p>If you&rsquo;re using Firefox and notice it to be laggy, try it in a different browser (Chrome and IE work fine for me). The framerate drop doesn&rsquo;t seem to show up when I run the game locally, but only once I&rsquo;ve pushed it to the blog. I&rsquo;m not quite sure how to go about debugging something like that.</p>
+
+<p>The version that&rsquo;s up now is using Phaser&rsquo;s Arcade physics to check for collisions. I also wrote a version using P2 physics, have a root around the <a href="https://github.com/rieya-uc/blog_demos/tree/master/explore_the_farm">repo</a> if you&rsquo;d like to compare the two. There&rsquo;s some changes coming to the P2 api, so depending on how far into the future you&rsquo;re reading this, the P2 physics town may or may not work.</p>
+
+<p>There&rsquo;s also a third physics system, Ninja, which I haven&rsquo;t tried out yet. Don&rsquo;t know which one to use? Read the explanation <a href="http://www.html5gamedevs.com/topic/4518-explaining-phaser-2s-multiple-physics-systems/">here</a>.</p>
+
+<p>Fancy making your own town? You&rsquo;ll need <a href="http://www.mapeditor.org/">Tiled</a>, and the wonderful lpc tilesets from <a href="http://opengameart.org/lpc-art-entries">opengame.art</a>.</p>
+
+<p>Check out my <a href="https://github.com/rieya-uc/blog_demos">code</a>, it seems to be growing.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Rieya</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-15T17:17:28+01:00" pubdate data-updated="true">Jul 15<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/arcade/'>Arcade</a>, <a class='category' href='/blog/categories/collision/'>Collision</a>, <a class='category' href='/blog/categories/javascript/'>Javascript</a>, <a class='category' href='/blog/categories/p2/'>P2</a>, <a class='category' href='/blog/categories/phaser/'>Phaser</a>, <a class='category' href='/blog/categories/sprite-animation/'>Sprite animation</a>, <a class='category' href='/blog/categories/tilemaps/'>Tilemaps</a>, <a class='category' href='/blog/categories/demo/'>demo</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://rieya-uc.github.io/blog/2014/07/15/tilemap-towns/" data-via="" data-counturl="http://rieya-uc.github.io/blog/2014/07/15/tilemap-towns/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/06/25/dodge-and-shoot/" title="Previous Post: Dodge and Shoot">&laquo; Dodge and Shoot</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/07/15/tilemap-towns/">Tilemap Towns</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/25/dodge-and-shoot/">Dodge and Shoot</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/11/drag-the-square/">Drag the Square</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/03/roll-the-dice/">Roll the Dice</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Rieya -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'rieya-uc';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://rieya-uc.github.io/blog/2014/07/15/tilemap-towns/';
+        var disqus_url = 'http://rieya-uc.github.io/blog/2014/07/15/tilemap-towns/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
