@@ -30,7 +30,7 @@ Hold the left mouse button to strafe.
     <script type="text/javascript" src="../../../../../blog_demos/arena_shooter/MainMenu.js"></script>
     <script type="text/javascript" src="../../../../../blog_demos/arena_shooter/Game.js"></script>
     
-    <script type="text/javascript">
+    <script type="text/javascript" id="script">
       
       window.onload = function() {
 
