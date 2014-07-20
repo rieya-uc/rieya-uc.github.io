@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Javascript | One Broken Pixel]]></title>
   <link href="http://rieya-uc.github.io/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://rieya-uc.github.io/"/>
-  <updated>2014-07-17T23:27:15+01:00</updated>
+  <updated>2014-07-20T16:50:02+01:00</updated>
   <id>http://rieya-uc.github.io/</id>
   <author>
     <name><![CDATA[Rieya]]></name>
@@ -40,7 +40,7 @@
     <script type="text/javascript" src="../../../../../blog_demos/explore_the_farm/MainMenu.js"></script>
     <script type="text/javascript" src="../../../../../blog_demos/explore_the_farm/Game.js"></script>
     
-    <script type="text/javascript">
+    <script type="text/javascript" id="script">
       
       window.onload = function() {
 
@@ -109,7 +109,7 @@
     <script type="text/javascript" src="../../../../../blog_demos/arena_shooter/MainMenu.js"></script>
     <script type="text/javascript" src="../../../../../blog_demos/arena_shooter/Game.js"></script>
     
-    <script type="text/javascript">
+    <script type="text/javascript" id="script">
       
       window.onload = function() {
 

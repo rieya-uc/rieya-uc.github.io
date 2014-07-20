@@ -100,8 +100,8 @@ TilemapTowns.Game.prototype = {
         this.physics.p2.enable(this.player);
         this.player.body.fixedRotation = true;
 
-        //this.player.anchor.setTo(0.5, 1);
-        //this.player.body.setSize(16,8);
+        this.player.anchor.setTo(0.5, 1);
+        this.player.body.setSize(16,8);
         
         this.camera.follow(this.player);
 

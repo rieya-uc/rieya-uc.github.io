@@ -23,6 +23,7 @@ TilemapTowns.Boot.prototype = {
     },
 
     create: function () {
+        var myScript = document.getElementById("script");
 
         //  Unless you specifically know your game needs to support multi-touch I would recommend setting this to 1
         this.input.maxPointers = 1;
@@ -33,7 +34,10 @@ TilemapTowns.Boot.prototype = {
         if (this.game.device.desktop)
         {
             //  If you have any desktop specific settings, they can go in here
-            this.scale.pageAlignHorizontally = false;
+            if (myScript.parentNode.className === "js_centred")
+                this.scale.pageAlignHorizontally = true;
+            else
+                this.scale.pageAlignHorizontally = false;
         }
         else
         {
@@ -45,7 +49,7 @@ TilemapTowns.Boot.prototype = {
             this.scale.maxWidth = 800;
             this.scale.maxHeight = 600;
             this.scale.forceLandscape = false;
-            this.scale.pageAlignHorizontally = false;
+            this.scale.pageAlignHorizontally = true;
             this.scale.setScreenSize(true);
         }
 
