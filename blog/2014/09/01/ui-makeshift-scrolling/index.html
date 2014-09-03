@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: Tilemaps - One Broken Pixel</title>
+  <title>UI - Makeshift Scrolling - One Broken Pixel</title>
   <meta name="author" content="Rieya">
 
   
-  <meta name="description" content="Category: Tilemaps">
+  <meta name="description" content="I&rsquo;ve been writing various UI bits and bobs for a different project I&rsquo;ve been working on, including this rather colourful scrollpane. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://rieya-uc.github.ioblog/categories/tilemaps">
+  <link rel="canonical" href="http://rieya-uc.github.io/blog/2014/09/01/ui-makeshift-scrolling">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="One Broken Pixel" type="application/atom+xml">
@@ -70,36 +70,125 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Tilemaps</h1>
+    
+      <h1 class="entry-title">UI - Makeshift Scrolling</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-01T16:03:58+01:00" pubdate data-updated="true">Sep 1<span>st</span>, 2014</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
+
+
+<div class="entry-content"><p>I&rsquo;ve been writing various UI bits and bobs for a different project I&rsquo;ve been working on, including this rather colourful scrollpane. There&rsquo;s not much to look at, everything works as expected, and I&rsquo;ve added a few extra buttons to show it off.</p>
+
+<!--more-->
 
 
 
-  
-  <h2>2014</h2>
 
-<article>
-  
-<h1><a href="/blog/2014/07/15/tilemap-towns/">Tilemap Towns</a></h1>
-<time datetime="2014-07-15T17:17:28+01:00" pubdate><span class='month'>Jul</span> <span class='day'>15</span> <span class='year'>2014</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/arcade/'>Arcade</a>, <a class='category' href='/blog/categories/collision/'>Collision</a>, <a class='category' href='/blog/categories/javascript/'>Javascript</a>, <a class='category' href='/blog/categories/p2/'>P2</a>, <a class='category' href='/blog/categories/phaser/'>Phaser</a>, <a class='category' href='/blog/categories/sprite-animation/'>Sprite animation</a>, <a class='category' href='/blog/categories/tilemaps/'>Tilemaps</a>, <a class='category' href='/blog/categories/demo/'>demo</a></span>
-</footer>
+<script type="text/javascript">
+    var path = '../../../../../blog_demos/';
+</script>
 
 
-</article>
+
+
+<div id="demo" class="centre">
+    <style>
+        canvas {border : 1px solid black;}
+    </style>
+
+    <script type="text/javascript" src="../../../../../blog_demos/libs/phaser.min_2.07.js"></script>
+    <script type="text/javascript" src="../../../../../blog_demos/makeshift_scrolling/Pane.js"></script>
+    <script type="text/javascript" src="../../../../../blog_demos/makeshift_scrolling/Scrollpane.js"></script>
+    <script type="text/javascript" src="../../../../../blog_demos/makeshift_scrolling/makeshift_scrolling.js"></script>
 
 </div>
 
+
+<pre><br></pre>
+
+
+<p>A guide on <a href="http://csdgn.org/inform/scrollbar-mechanics">scrollbar mechanics</a> helped immensely with the not-so-obvious issues that arose. Just bear in mind that in Phaser the position (0,0) is top-left of the screen rather than bottom-left, so scrolling downwards runs in the opposite direction to that outlined in the guide.</p>
+
+<p>Other than that, the fiddly bit was having to account for borders in the background image and scrollbar which the pane content shouldn&rsquo;t move over. Small, pixel-sized errors compound to window-sized errors as the pane content grows! I think I&rsquo;ve accounted for every border offset now though.</p>
+
+<p>Check out the scrollpane code <a href="https://github.com/rieya-uc/blog_demos/tree/master/makeshift_scrolling">here</a>, and if you wish, peruse the other <a href="https://github.com/rieya-uc/blog_demos">demo code</a>.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Rieya</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-01T16:03:58+01:00" pubdate data-updated="true">Sep 1<span>st</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/javascript/'>Javascript</a>, <a class='category' href='/blog/categories/phaser/'>Phaser</a>, <a class='category' href='/blog/categories/ui/'>UI</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://rieya-uc.github.io/blog/2014/09/01/ui-makeshift-scrolling/" data-via="" data-counturl="http://rieya-uc.github.io/blog/2014/09/01/ui-makeshift-scrolling/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/07/15/tilemap-towns/" title="Previous Post: Tilemap Towns">&laquo; Tilemap Towns</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -154,7 +243,10 @@
       var disqus_shortname = 'rieya-uc';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://rieya-uc.github.io/blog/2014/09/01/ui-makeshift-scrolling/';
+        var disqus_url = 'http://rieya-uc.github.io/blog/2014/09/01/ui-makeshift-scrolling/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
